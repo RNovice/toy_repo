@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Finder</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main>
+        <div id="nav-space"></div>
+        <nav>
+            <div class="nav-right-one">
+                <a id="top-btn" href="#nav-space">top</a>
+                <button id="composed-mode">composed option</button>
+            </div>
+            <button id="remove">remove mode</button>
+        </nav>
+        <h1>WORD FINDER</h1>
+        <section class="form">
+            <div class="row r3">
+                <label class="item" for="length">Length</label>
+                <input class="item" type="number" id="length" min="0" max="99" step="1" placeholder="default unknown">
+            </div>
+        
+            <div class="row r3">
+                <label class="item" for="includes">Includes</label>
+                <input class="item" type="text" id="includes" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" placeholder="enter letter">
+            </div>
+            <div class="row" id="includes-container"></div>
+        
+            <div class="row r3">
+                <label class="item" for="excludes">Excludes</label>
+                <input class="item" type="text" id="excludes" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" placeholder="enter letter">
+            </div>
+            <div class="row" id="excludes-container"></div>
+        
+            <div class="row r3 composed-div" id="composed-option">
+                <label class="item" for="composed">Composed</label>
+                <input class="item" type="text" id="composed" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" placeholder="only composed in">
+            </div>
+            <div class="row composed-div" id="composed-container"></div>
+        
+            <div class="row r4">
+                <label class="item">Position In</label>
+                <button class="op-btn item" id="add-index">+</button>
+                <button class="op-btn item" id="minus-index">−</button>
+                <input class="item" type="number" id="position-index" min="1" max="99" step="1" placeholder="POSN">
+                <input class="item" type="text" id="index-letter" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" placeholder="letr">
+            </div>
+            <div class="row r2" id="inposition-container"></div>
+        
+            <div class="row r4">
+                <label class="item">Position Not</label>
+                <button class="op-btn item" id="add-notdex">+</button>
+                <button class="op-btn item" id="minus-notdex">−</button>
+                <input class="item" type="number" id="position-notdex" min="1" max="99" step="1" placeholder="POSN">
+                <input class="item" type="text" id="notdex-letter" onkeydown="return /[a-z]/i.test(event.key)" maxlength="1" placeholder="letr">
+            </div>
+            <div class="row r2" id="notposition-container"></div>
+        
+            <button id="find-btn">find</button>
+        </section>
+        <section id="words"></section>
+        <div class="more"></div>
+    </main>
+    
+    <script type="module" src="index.js"></script>
+</body>
+</html>
